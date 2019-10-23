@@ -1,51 +1,32 @@
 <!doctype html>
 <html lang="en">
   <head>
- <!-- Required meta tags -->
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
- <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>HW04 - MKTYP6a</title>
-    <body class="container">
-      <h1> About Dio</h1>
-<br>
-      <div class="col">
-        <img src="penadio.jpg">
-      </div>
+    <script src="calcdio.js"></script>
 
-<br>
-       <ul>
-           <li> I am a middle child </li>
-           <li> I am Afro-Latina </li>
-           <li> I am a first genertaion student </li>
-      </ul>
-<br>
-    <button> <a href="https://www.facebook.com/diosmeiris.pena">Facebook</a> <button>
-<br>
-    <button> <a href="https://twitter.com/diosmeiris_312"> Twitter</a> <button>
+    <title>Calculator by Dio</title>
+  </head>
+  <body class="container">
+      <h1>Bedroom Area</h1>
+      What is your full name? <input type="text" id="fullName"><br>
+      Enter length of bedroom in inches <input type="number" id="roomLength"><br>
+      Enter width of bedroom in inches <input type="number" id="width"><br>
+      <button class="btn btn-lg btn-danger" onClick="calcArea()">
+          Calculate Area of Bedroom
+      </button>
+      <br>
+      <hr>
+      <h2>Results</h2>
+      <label id="areaL">????</label>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <!-- Optional JavaScript -->
- <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
