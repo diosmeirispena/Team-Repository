@@ -4,6 +4,6 @@ function calcArea(){
   area = l*w  // calculate the area of the bedroom
   console.log(area)
   areaL.innerHTML =    // write into label element with id "Area"
-      "Your Area is "
+      "Your Area (in feet squared) is "
       +area.toFixed(1)  // round Area to 1 decimal place
 }
