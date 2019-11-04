@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title> Birth Year Calc </title>
+</head>
+<body style="background-color:powderblue"> <class="container">
+<h1> Find Out Volume of Bedroom</h1>
+What is your full name? <input type="text" id="fullName"><br>
+Enter length of bedroom in feet <input type="number" id="roomLength"><br>
+Enter width of bedroom in feet <input type="number" id="width"><br>
+Enter height of bedroom in feet <input type="number" id="height"><br>
+<button class="btn btn-lg btn-danger" onClick="calcVol()">
+  Calculate your volume
+</button>
+<br>
+<label id="resultLabel">
+  Your volume is ???? ft
+</label>
+
+<script>
+function calcVolume(){
+  let volume = radiusTF.value
+  let l = roomLength.value  // read length from element with id="length"
+  let w = width.value  // read width from element with id="width"
+  let h = height.value // read height from element with id="height"
+  let volume = l*w*h // calculate the volume of the bedroom
+  resultLabel.innerHTML =
+    "Your volume in feet squared is "
+}
+</script>
+</body>
+</html>
