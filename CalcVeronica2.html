@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title> demo1 </title>
+</head>
+<body>
+<h1>Simple Demo</h1>
+Your Radius: <input type="text" id="radiusTF"><br>
+Your Height: <input type="text" id="heightTF"><br>
+<button onClick="calcVol()">
+  Calculate Volume of Cone
+</button>
+<br>
+<label id="resultLabel">
+  You Volume is ????
+</label>
+
+<script>
+function calcVol(){
+  r = radiusTF.value  // read radius from element with id="radius"
+  h = heightTF.value  // read height from element with id="height"
+  volume = 1/3.0*h*(r*r)*Math.PI  // calculate the Volume of a Cone
+  resultLabel.innerHTML =    // write into label element with id "Volume of a Cone"
+      "Your Volume is "
+      +volume.toFixed(1)  // round Volume to 1 decimal place
+}
+</script>
+</body>
+</html>
