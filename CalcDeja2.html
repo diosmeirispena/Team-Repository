@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title> demo1 </title>
+</head>
+<body>
+<h1>Simple Demo</h1>
+your Volume: <input type="text" id="radiusTF"><br>
+<button onClick="calcVol()">
+  Calculate the Volume
+</button>
+<br>
+<label id="resultLabel">
+  What is the Volume?
+</label>
+
+<script>
+function calcVol(){
+  r = radiusTF.value  // read radius from element with id="radius"
+  volume = 4/3.0*(r*r*r)*Math.PI // calculate the Volume of a Sphere
+  resultLabel.innerHTML =    // write into label element with id "Volume"
+      "Your Volume is..."
+      +volume.toFixed(1)  // round Volume to 1 decimal place
+}
+</script>
+</body>
+</html>
