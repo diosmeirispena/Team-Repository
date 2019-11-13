@@ -44,6 +44,46 @@
     ctx.arc(x,y,r,0,2*Math.PI,true)
     ctx.fill()
   }
+  function drawDio(){
+ctx.beginPath()
+ctx.moveTo(160,160)
+ctx.lineTo(200,200)
+ctx.lineTo(200,140)
+ctx.lineTo(240,140)
+ctx.lineTo(240,240)
+ctx.lineTo(280,280)
+ctx.lineTo(280,200)
+ctx.lineTo(240,200)
+ctx.lineTo(240,160)
+ctx.lineTo(200,160)
+ctx.lineTo(200,200)
+ctx.lineTo(200,160)
+ctx.stroke()
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   </script>
  </head>
@@ -64,7 +104,7 @@
      c <input type="text" id="colorTF" value="#ffaa55"><br>
      <button onclick="drawOneCircle()">draw a circle</button>
      <br>
-     
+
      n <input type="text" id="nTF" value="10"><br>
      <button onclick="drawCircles()">draw circles</button>
    </div>
