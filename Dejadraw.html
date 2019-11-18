@@ -2,8 +2,21 @@
 <html>
  <head>
   <meta charset="utf-8"/>
-  <script src="drawgridDio.js"></script>
+  <script src="drawgrid.js"></script>
   <script type="application/javascript">
+
+
+    let canvas=null  // we give this a value in the init method
+    let ctx=null
+
+    function init(){
+      // initialize canvas and ctx after the page is loaded
+      canvas = document.getElementById('canvas')
+      ctx = canvas.getContext('2d')
+      drawBackground()
+    }
+
+
     function draw() {
       var canvas = document.getElementById('canvas');
       if (canvas.getContext) {
@@ -32,6 +45,7 @@
         ctx.lineTo(151,299)
         ctx.stroke()
         ctx.fill()
+        ctx.lineWidth = 1
 
 
 
@@ -48,6 +62,7 @@
       ctx.lineTo(131,173)
       ctx.lineTo(105,147)
       ctx.stroke()
+      ctx.lineWidth=1
 
     }
 
@@ -66,8 +81,13 @@
 
   </script>
  </head>
- <body onload="draw();">
+ <body onload="init();">
    <h1> Deja's First Graphic Design!</h1> <br>
-   <canvas id="canvas" width="500" height="500"></canvas>
+   <button style="background:red; color:white"
+           onclick="drawBackground()">Clear</button>
+    <button onclick="draw()">Draw Deja</button>
+
+   <canvas style="float:left;margin-right:30px" id="canvas" width="1000" height="1000"></canvas>
+   <br>
  </body>
 </html>
