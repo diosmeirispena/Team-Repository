@@ -11,10 +11,10 @@
         var ctx = canvas.getContext('2d');
         // notes: fill style gives it the color to fill in while fillrect gives it the size of the rect (rectangle) you are making
         // notes: you also have to adjust the width and height down at the bottom so the things you draw can work within that space/range
-        drawD();
 
+        //draw0()
         ctx.srokeStyle="blue";
-        ctx.fillStyle="blue";
+        ctx.fillStyle="rgba(250,0,250,0.3)";
         ctx.lineWidth=5
         ctx.beginPath()
         ctx.lineTo(151,300)
@@ -31,12 +31,13 @@
         ctx.lineTo(152,170)
         ctx.lineTo(151,299)
         ctx.stroke()
+        ctx.fill()
 
 
 
       }
     }
-    function drawD(){
+    function draw0(){
       var canvas = document.getElementById('canvas');
       var ctx = canvas.getContext('2d');
       ctx.strokeStyle="blue"
@@ -46,6 +47,7 @@
       ctx.lineTo(100,196)
       ctx.lineTo(131,173)
       ctx.lineTo(105,147)
+      ctx.stroke()
 
     }
 
