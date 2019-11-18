@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById('canvas');
+      if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = 'rgb(255, 230, 210)';
+        ctx.fillRect(0, 0, 500, 500);
+
+        ctx.fillStyle = 'rgb(200, 0, 0)';
+        ctx.fillRect(10, 10, 50, 50);
+
+
+
+        //ctx.fillRect(25, 25, 100, 100);
+        //ctx.clearRect(45, 45, 60, 60);
+        //ctx.strokeRect(50, 50, 50, 50);
+
+        ctx.fillRect(100,50,300,20)
+        ctx.fillRect(250-10,50,20,300)
+
+
+      }
+    }
+  </script>
+ </head>
+ <body onload="draw();">
+   <h1> Veronica's First Javascript Canvas </h1> <br>
+   <canvas id="canvas" width="500" height="500"></canvas>
+ </body>
+</html>
