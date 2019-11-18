@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <script src="drawgridDio.js"></script>
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById('canvas');
+      if (canvas.getContext) {
+        drawBackground(canvas)
+        var ctx = canvas.getContext('2d');
+        // notes: fill style gives it the color to fill in while fillrect gives it the size of the rect (rectangle) you are making
+        // notes: you also have to adjust the width and height down at the bottom so the things you draw can work within that space/range
+
+        //draw0()
+        ctx.srokeStyle="blue";
+        ctx.fillStyle="rgba(250,0,250,0.3)";
+        ctx.lineWidth=5
+        ctx.beginPath()
+        ctx.lineTo(151,300)
+        ctx.lineTo(330,300)
+        ctx.lineTo(328,170)
+        ctx.lineTo(289,240)
+        ctx.lineTo(269,170)
+        ctx.lineTo(249,240)
+        ctx.lineTo(248,234)
+        ctx.lineTo(221,171)
+        ctx.lineTo(202,241)
+        ctx.lineTo(173,170)
+        ctx.lineTo(162,241)
+        ctx.lineTo(152,170)
+        ctx.lineTo(151,299)
+        ctx.stroke()
+        ctx.fill()
+
+
+
+      }
+    }
+    function draw0(){
+      var canvas = document.getElementById('canvas');
+      var ctx = canvas.getContext('2d');
+      ctx.strokeStyle="blue"
+      ctx.lineWidth=5
+      ctx.beginPath()
+      ctx.lineTo(102,142)
+      ctx.lineTo(100,196)
+      ctx.lineTo(131,173)
+      ctx.lineTo(105,147)
+      ctx.stroke()
+
+    }
+
+
+
+        function drawCircle(ctx,x,y,r){
+        ctx.begingPath();
+        ctx.arc(x,y,r)
+        ctx.stroke()
+
+
+        }
+
+
+
+
+  </script>
+ </head>
+ <body onload="draw();">
+   <h1> Deja's First Graphic Design!</h1> <br>
+   <canvas id="canvas" width="500" height="500"></canvas>
+ </body>
+</html>
