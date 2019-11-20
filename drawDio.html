@@ -39,44 +39,47 @@
     let y = parseInt(yTF.value)
     let r = parseInt(rTF.value)
     let color = colorTF.value
-    ctx.fillStyle=color
+    ctx.fillStyle="rgba(250,0,250,0.3)"
     ctx.beginPath();
     ctx.arc(x,y,r,0,2*Math.PI,true)
     ctx.fill()
   }
   function drawDio(){
-ctx.beginPath()
-ctx.strokeStyle="red"
-ctx.lineWidth=5
-ctx.moveTo(160,160)
-ctx.lineTo(200,200)
-ctx.lineTo(200,140)
-ctx.lineTo(240,140)
-ctx.lineTo(240,240)
-ctx.lineTo(280,280)
-ctx.lineTo(280,200)
-ctx.lineTo(240,200)
-ctx.lineTo(240,160)
-ctx.lineTo(200,160)
-ctx.lineTo(200,200)
-ctx.lineTo(200,160)
-ctx.stroke()
+    ctx.beginPath()
+    ctx.moveTo(160,160)
+    ctx.lineTo(200,200)
+    ctx.lineTo(200,140)
+    ctx.lineTo(240,140)
+    ctx.lineTo(240,240)
+    ctx.lineTo(280,280)
+    ctx.lineTo(280,200)
+    ctx.lineTo(240,200)
+    ctx.lineTo(240,160)
+    ctx.lineTo(200,160)
+    ctx.lineTo(200,200)
+    ctx.lineTo(200,160)
+    ctx.lineTo(160,160)
+    ctx.stroke()
   }
   function drawDio(){
-      ctx.strokeStyle="red"
-      ctx.lineWidth=5
       ctx.beginPath()
-      ctx.moveTo()
-      ctx.lineTo()
-      ctx.lineTo()
-      ctx.lineTo()
-      ctx.lineTo()
-      ctx.lineTo()
-      ctx.lineTo()
-      ctx.lineTo()
-      ctx.lineTo()
+      ctx.moveTo(280,140)
+      ctx.lineTo(320,140)
+      ctx.lineTo(320,320)
+      ctx.lineTo(280,200)
+      ctx.lineTo(280,140)
       ctx.stroke()
-    }
+  }
+  function drawDio(){
+    ctx.beginPath()
+    ctx.moveTo(290,110)
+    ctx.lineTo(320,140)
+    ctx.lineTo(290,130)
+    ctx.lineTo(310,110)
+    ctx.lineTo(290,110)
+    ctx.stroke()
+    
+
 
 
 
