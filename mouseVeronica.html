@@ -21,8 +21,33 @@
     x = event.offsetX
     y = event.offsetY
     //
-    drawObject(x,y)
+    if (event.altKey){
+      drawCircle(x,y,10)
+      fillCircle(x,y,10)
+    } else {
+       ctx.fillStyle="red"
+       drawV(x,y)
+    }
   }
+  if (event.shiftKey){
+    drawStar(x,y)
+    fillStar(x,y)
+  } else {
+     ctx.fillStyle="red"
+     drawV(x,y)
+ }
+
+  function drawV(x,y){
+    ctx.beginPath()
+    ctx.moveTo(x,y)
+    ctx.lineTo(x+150,y-200)
+    ctx.lineTo(x,y-25)
+    ctx.lineTo(x,y)
+    ctx.lineTo(x-150,y-200)
+    ctx.lineTo(x,y-25)
+    ctx.fill()
+  }
+
 
   function mouseMove(event){
     //console.log(event.buttons)
@@ -32,16 +57,13 @@
     if (event.buttons==1){  // see if the mouse button is pressed
       ctx.fillRect(x,y,10,30)
       ctx.fillRect(x-15,y,30,3)
-      ctx.strokeStyle="rgba(250,0,0,0.1)"
+      ctx.strokeStyle="rgba(250,0,0,30)"
       drawCircle(x,y,50)
+      ctx.fillStyle = "blue"
+
     }
   }
 
-  function drawObject(x,y){
-    // put in your own code to draw something interesting
-    // at starting here ...
-    drawCircle(x,y,10)
-  }
 
 
 
@@ -58,6 +80,25 @@
     ctx.beginPath();
     ctx.arc(x,y,r,0,2*Math.PI,true)
     ctx.fill()
+    ctx.fillCircle = "blue"
+  }
+
+  function drawStar(){
+    var alpha = (2 * Math.PI) / 10;
+var radius = 12;
+var starXY = [100,100]
+
+canvasCtx.beginPath();
+
+for(var i = 11; i != 0; i--)
+{
+    var r = radius*(i % 2 + 1)/2;
+    var omega = alpha * i;
+    canvasCtx.lineTo((r * Math.sin(omega)) + starXY[0], (r * Math.cos(omega)) + starXY[1]);
+}
+canvasCtx.closePath();
+canvasCtx.fillStyle = "#000";
+canvasCtx.fill();
   }
 
   </script>
@@ -67,7 +108,7 @@
    <br>
 
    <button onclick="drawBackground()">Clear</button>
-   <button onclick="drawTim(200,200)">Draw</button>
+
 
    <canvas style="float:left;margin-right:30px"
            id="canvas" width="1000" height="1000">

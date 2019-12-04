@@ -10,14 +10,13 @@
   <script type="application/javascript">
 
 
-
-  function calcMC(){
-    m = money.value  // read money value from element with id="money"
-    e = 0.71  // read euro rate from element with id="euro"
-    mc =(e*m)  // calculate the Body Mass Index
-    MC.innerHTML =    // write into label element with id "MC"
-        "You're MC is "
-        +mc.toFixed(1)  // round MC to 1 decimal place
+  function calcBMI(){
+    w = weight.value  // read weight from element with id="weight"
+    h = height.value  // read height from element with id="height"
+    bmi = 703*w/(h*h)  // calculate the Body Mass Index
+    BMI.innerHTML =    // write into label element with id "BMI"
+        "You're BMI is "
+        +bmi.toFixed(1)  // round BMI to 1 decimal place
 
 
   }
@@ -98,32 +97,33 @@ canvas.addEventListener('mousemove',mouseMove,false)
   </script>
  </head>
  <body onload="init();">
-     <body style="background-color:#AFDCEF;">
    <div class="container">
      <div class="jumbotron">
-       <h1>Deja's Final Project .... </h1>
+       <h1>Veronica's Final Project .... </h1>
+       <p>This is a minimal demo </p>
      </div>
 
    <div class="row">
      <div class="col">
-       <h1>Convert you're money with ease !</h1>
-      input your money value in U.S currency.
-       <h1>Money Conversion </h1>
-       Enter your value in U.S currency <input type="number" id="money"><br>
-       Enter your the euro rate of 0.71 <input type="number" id="euro"><br>
+       <h1>Calculations</h1>
+       Put some textfields, labels, and buttons here ..
+       <h1>Body Mass Index</h1>
+       What is your full name? <input type="text" id="fullName"><br>
+       Enter your weight in pounds <input type="number" id="weight"><br>
+       Enter your height in inches <input type="number" id="height"><br>
        <button class="btn btn-lg btn-danger"
-               onClick="calcMC()"> calculate
-
+               onClick="calcBMI()">
+           Calculate BMI
        </button>
        <br>
        <hr>
        <h2>Results</h2>
-       <label id="MC">????</label>
+       <label id="BMI">????</label>
 
      </div>
      <div class="col">
        <h1>Canvas</h1>
-
+       <canvas style="float:left;margin-right:30px" id="canvas" width="500" height="500"></canvas>
 
 
      </div>
