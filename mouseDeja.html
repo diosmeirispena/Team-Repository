@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <script type="application/javascript">
+
+  let canvas=null  // we give this a value in the init method
+  let ctx=null
+
+  function init(){
+    // initialize canvas and ctx after the page is loaded
+    canvas = document.getElementById('canvas')
+    ctx = canvas.getContext('2d')
+    drawBackground()
+    canvas.addEventListener('dblclick',mouseClick,false)
+    canvas.addEventListener('mousemove',mouseMove,false)
+  }
+
+  function mouseClick(event){
+    console.dir(event)
+    x = event.offsetX
+    y = event.offsetY
+    //
+    fillCircle(x,y,50)
+    drawCircle(x-57,y-7,5)
+    drawCircle(x-25,y+1,9)
+    drawTriangle(x,y)
+
+  }
+
+  function mouseMove(event){
+    //console.log(event.buttons)
+    ctx.fillStyle="rgba(250,0,250,0.1)"
+    const x = event.offsetX
+    const y = event.offsetY
+    if (event.buttons==1){  // see if the mouse button is pressed
+      dejadraw(x,y)
+      ctx.strokeStyle="rgba(0,0,255,0.3)"
+      drawCircle(x,y,50)
+    }
+  }
+
+  function dejadraw(x,y) {
+    var canvas = document.getElementById('canvas');
+    if (canvas.getContext) {
+      //drawBackground(canvas)
+      var ctx = canvas.getContext('2d');
+      // notes: fill style gives it the color to fill in while fillrect gives it the size of the rect (rectangle) you are making
+      // notes: you also have to adjust the width and height down at the bottom so the things you draw can work within that space/range
+
+      //draw0()
+      ctx.srokeStyle="blue";
+      ctx.fillStyle="rgba(250,0,250,0.3)";
+      ctx.lineWidth=5
+      ctx.beginPath()
+      ctx.lineTo(151-250+x,y-250+300)
+      ctx.lineTo(330-250+x,y-250+300)
+      ctx.lineTo(328-250+x,y-250+170)
+      ctx.lineTo(289-250+x,y-250+240)
+      ctx.lineTo(269-250+x,y-250+170)
+      ctx.lineTo(249-250+x,y-250+240)
+      ctx.lineTo(248-250+x,y-250+234)
+      ctx.lineTo(221-250+x,y-250+171)
+      ctx.lineTo(202-250+x,y-250+241)
+      ctx.lineTo(173-250+x,y-250+170)
+      ctx.lineTo(162-250+x,y-250+241)
+      ctx.lineTo(152-250+x,y-250+170)
+      ctx.lineTo(151-250+x,y-250+299)
+      ctx.stroke()
+      ctx.fill()
+      ctx.lineWidth = 1
+
+
+
+    }
+  }
+
+  function drawTriangle(x,y) {
+    var canvas = document.getElementById('canvas');
+    if (canvas.getContext) {
+      //drawBackground(canvas)
+      var ctx = canvas.getContext('2d');
+      // notes: fill style gives it the color to fill in while fillrect gives it the size of the rect (rectangle) you are making
+      // notes: you also have to adjust the width and height down at the bottom so the things you draw can work within that space/range
+
+      //draw0()
+      ctx.srokeStyle="blue";
+      ctx.fillStyle="rgba(250,0,250,0.3)";
+      ctx.lineWidth=5
+      ctx.beginPath()
+      ctx.moveTo(x,y)
+      ctx.lineTo(x+100,y)
+      ctx.lineTo(x,y+100)
+      ctx.lineTo(x,y)
+      ctx.stroke()
+      ctx.fill()
+      ctx.lineWidth = 1
+
+
+
+    }
+  }
+
+
+
+
+    function drawCircle(x,y,r){
+      // draw a circle centered at (x,y) with radius r
+      ctx.beginPath();
+      ctx.arc(x,y,r,0,2*Math.PI,true)
+      ctx.stroke()
+    }
+
+    function fillCircle(x,y,r){
+      // draw a circle centered at (x,y) with radius r
+      ctx.beginPath();
+      ctx.arc(x,y,r,0,2*Math.PI,true)
+      ctx.fill()
+    }
+
+  </script>
+
+
+<body onload="init();">
+ <h1>MouseDemo interactive javascript canvas for 11/20</h1>
+ <br>
+
+ <button onclick="drawBackground()">Clear</button>
+ <button onclick="drawTim(200,200)">Draw</button>
+
+ <canvas style="float:left;margin-right:30px"
+         id="canvas" width="1500" height="1500">
+ </canvas>
+
+ <script src="drawgrid.js"></script>
+</body>
+</html>

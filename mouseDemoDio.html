@@ -31,16 +31,16 @@
     const x = event.offsetX
     const y = event.offsetY
     if (event.buttons==1){  // see if the mouse button is pressed
-      drawCircle(x,y,5)
+      drawCircle(x,y,10)
     }
   }
 
+
   function drawObject(x,y){
-    // put in your own code to draw something interesting
+    // put in your own code to draw something interesting6
     // at starting here ...
     drawCircle(x,y,10)
   }
-
 
 
 
@@ -65,7 +65,7 @@
    <br>
 
    <button onclick="drawBackground()">Clear</button>
-   <button onclick="drawTim(200,200)">Draw</button>
+   <button onclick="drawDio(200,200)">Draw</button>
 
    <canvas style="float:left;margin-right:30px"
            id="canvas" width="1500" height="1500">
