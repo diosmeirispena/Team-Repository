@@ -14,7 +14,6 @@
     drawBackground()
   }
 
-
   function drawCircle(x,y,r){
     // draw a circle centered at (x,y) with radius r
     ctx.beginPath();
@@ -33,7 +32,6 @@
     }
   }
 
-
   function drawOneCircle(){
     let x = parseInt(xTF.value)
     let y = parseInt(yTF.value)
@@ -45,75 +43,58 @@
     ctx.fill()
   }
   function drawDio(){
+    ctx.fillStyle="rgba(250,0,250,0.3)"
     ctx.beginPath()
-    ctx.moveTo(160,160)
-    ctx.lineTo(200,200)
-    ctx.lineTo(200,140)
-    ctx.lineTo(240,140)
-    ctx.lineTo(240,240)
-    ctx.lineTo(280,280)
-    ctx.lineTo(280,200)
-    ctx.lineTo(240,200)
-    ctx.lineTo(240,160)
-    ctx.lineTo(200,160)
-    ctx.lineTo(200,200)
-    ctx.lineTo(200,160)
-    ctx.lineTo(160,160)
+    ctx.moveTo(96,103)
+    ctx.lineTo(100,299)
+    ctx.lineTo(140,297)
+    ctx.lineTo(139,231)
+    ctx.lineTo(159,231)
+    ctx.lineTo(159,301)
+    ctx.lineTo(199,300)
+    ctx.lineTo(199,99)
+    ctx.lineTo(160,101)
+    ctx.lineTo(159,167)
+    ctx.lineTo(139,167)
+    ctx.lineTo(137,99)
+    ctx.lineTo(100,99)
     ctx.stroke()
+    ctx.fill()
+    drawDio_2()
   }
-  function drawDio(){
+  function drawDio_2(){
+    console.log("hello")
       ctx.beginPath()
-      ctx.moveTo(280,140)
-      ctx.lineTo(320,140)
-      ctx.lineTo(320,320)
-      ctx.lineTo(280,200)
-      ctx.lineTo(280,140)
+      ctx.moveTo(246,142)
+      ctx.lineTo(249,299)
+      ctx.lineTo(298,298)
+      ctx.lineTo(299,141)
+      ctx.lineTo(246,140)
       ctx.stroke()
+      ctx.fill()
+      drawDio_3()
   }
-  function drawDio(){
+  function drawDio_3(){
     ctx.beginPath()
-    ctx.moveTo(290,110)
-    ctx.lineTo(320,140)
-    ctx.lineTo(290,130)
-    ctx.lineTo(310,110)
-    ctx.lineTo(290,110)
+    ctx.moveTo(247,103)
+    ctx.lineTo(247,130)
+    ctx.lineTo(300,129)
+    ctx.lineTo(301,99)
+    ctx.lineTo(247,101)
     ctx.stroke()
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    ctx.fill()
+  }
 
   </script>
  </head>
  <body onload="init();">
-   <h1>drawTim interactive javascript canvas for 11/13</h1>
+   <h1>DrawDio Interactive Javascript Canvas</h1>
    <br>
 
    <button style="background:red; color:white"
            onclick="drawBackground()">Clear</button>
 
-   <canvas style="float:left;margin-right:30px" id="canvas" width="500" height="500"></canvas>
+   <canvas style="float:left;margin-right:30px" id="canvas" width="600" height="600"></canvas>
    <br>
 
    <div>
@@ -128,6 +109,7 @@
      <button onclick="drawCircles()">draw circles</button>
    </div>
    <button onClick="drawDio()">Dio Button</button>
+
 
    <script src="drawgrid.js"></script>
  </body>
