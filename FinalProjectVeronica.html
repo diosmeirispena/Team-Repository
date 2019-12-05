@@ -10,16 +10,30 @@
   <script type="application/javascript">
 
 
-  function calcBMI(){
-    w = weight.value  // read weight from element with id="weight"
-    h = height.value  // read height from element with id="height"
-    bmi = 703*w/(h*h)  // calculate the Body Mass Index
-    BMI.innerHTML =    // write into label element with id "BMI"
-        "You're BMI is "
-        +bmi.toFixed(1)  // round BMI to 1 decimal place
+     function calcConversion(){
+       s = soles.value  // read soles from element with id= "soles"
+       conversion = s*3/10.0 // calculate the Conversion
+       Conversion.innerHTML =   // write into label element with id="Conversion"
+          "Your Conversion is "
+          +conversion.toFixed(1)  // round Conversion to 1 decimal place
+        }
+      function calcConversion2(){
+        r = yuan.value  // read yuan from element with id="yuan"
+        conversion2 = r*7/50.0 // calculate the Conversion2
+        Conversion2.innerHTML =   // write into label element with id="Conversion2"
+          "Your Conversion is "
+          +conversion2.toFixed(1)  // round Conversion2 to 1 decimal place
+        }
+      function calcConversion3(){
+        y = yen.value  // read yen from element with id= "yen"
+        conversion3 = y*92/10000.0 // calculate the Conversion3
+        Conversion3.innerHTML =   // write into label element with id="Conversion3"
+          "Your Conversion is "
+          +conversion3.toFixed(1)  // round Conversion3 to 1 decimal place
+        }
 
 
-  }
+
   let canvas=null  // we give this a value in the init method
   let ctx=null
 
@@ -100,25 +114,44 @@ canvas.addEventListener('mousemove',mouseMove,false)
    <div class="container">
      <div class="jumbotron">
        <h1>Veronica's Final Project .... </h1>
-       <p>This is a minimal demo </p>
+       <p> My final work for this Computer Science  </p>
      </div>
 
    <div class="row">
      <div class="col">
        <h1>Calculations</h1>
        Put some textfields, labels, and buttons here ..
-       <h1>Body Mass Index</h1>
-       What is your full name? <input type="text" id="fullName"><br>
-       Enter your weight in pounds <input type="number" id="weight"><br>
-       Enter your height in inches <input type="number" id="height"><br>
-       <button class="btn btn-lg btn-danger"
-               onClick="calcBMI()">
-           Calculate BMI
+       <h5>Convert Soles to USD</h5>
+       Enter Soles <input type="number" id="soles"><br>
+       <button class="btn btn-lg btn-danger" onClick="calcConversion()">
+           Convert Peruvian Soles to USD
        </button>
        <br>
        <hr>
        <h2>Results</h2>
-       <label id="BMI">????</label>
+       <label id="Conversion">????</label>
+
+       <h5>Convert Yuan to USD</h5>
+       Enter Yuan <input type="number" id="yuan"><br>
+       <button class="btn btn-lg btn-danger" onClick="calcConversion2()">
+           Convert Chinese Yuan to USD
+       </button>
+       <br>
+       <hr>
+       <h2>Results</h2>
+       <label id="Conversion2">????</label>
+
+       <h5>Convert Yen to USD</h5>
+       Enter Yen <input type="number" id="yen"><br>
+       <button class="btn btn-lg btn-danger" onClick="calcConversion3()">
+           Convert Japanese Yen to USD
+       </button>
+       <br>
+       <hr>
+       <h2>Results</h2>
+       <label id="Conversion3">????</label>
+
+
 
      </div>
      <div class="col">
