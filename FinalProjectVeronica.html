@@ -48,18 +48,23 @@ canvas.addEventListener('mousemove',mouseMove,false)
 
   function mouseClick(event){
     console.dir(event)
+    ctx.fillStyle="rgba(20,40,55,0.4)"
     const x = event.offsetX
     const y = event.offsetY
-    //draw something here ...
-    ctx.fillRect(x,y,20,50)
+    if (event.which==3)
+      drawInitials(x,y)
+
+
   }
 
   function mouseMove(event){
+    //console.log(event.buttons)
+    ctx.fillStyle="rgba(8,10,75,0.1)"
     const x = event.offsetX
     const y = event.offsetY
-    // put your own code in here!
-    if (event.buttons==1){ // only draw if they are pushing the button!
-        ctx.fillRect(x,y,10,20)
+    if (event.which==1){  // see if the mouse button is pressed
+      drawStar(x,y)
+      ctx.strokeStyle="rgba(0,0,255,0.3)"
     }
 }
 
@@ -97,7 +102,7 @@ canvas.addEventListener('mousemove',mouseMove,false)
     ctx.lineWidth=5
     ctx.beginPath()
     ctx.moveTo(198,100)
-    ctx.lineTo(300,100)
+    ctx.lineTo(300,10)
     ctx.lineTo(362,150)
     ctx.lineTo(364,213)
     ctx.lineTo(308,263)
@@ -106,6 +111,41 @@ canvas.addEventListener('mousemove',mouseMove,false)
     ctx.lineTo(142,141)
     ctx.lineTo(195,102)
     ctx.stroke()
+  }
+
+  function drawStar(x,y){
+    ctx.strokeStyle="rgba(0,0,255,0.3)";
+    ctx.lineWidth=3
+    ctx.beginPath();
+    ctx.moveTo(54+x, 0.0+y);
+    ctx.lineTo(70.5+x, 35+y);
+    ctx.lineTo(109+x, 35+y);
+    ctx.lineTo(81+x, 65.5+y);
+    ctx.lineTo(87.5+x, 102.5+y);
+    ctx.lineTo(54+x, 85+y);
+    ctx.lineTo(20.6+x, 102.5+y);
+    ctx.lineTo(27.5+x, 65.5+y);
+    ctx.lineTo(.5+x, 35+y);
+    ctx.lineTo(37.5+x, 35+y);
+    ctx.lineTo(54+x, 0+y);
+    ctx.stroke();
+    ctx.fill();
+    ctx.lineWidth=1
+  }
+
+  function drawInitials(x,y){
+    ctx.strokeStyle="green"
+    ctx.lineWidth=5
+    ctx.beginPath()
+    ctx.moveTo(50+x,20+y)
+    ctx.lineTo(30+x,20+y)
+    ctx.lineTo(40+x,60+y)
+    ctx.lineTo(50+x,60+y)
+    ctx.lineTo(70+x,20+y)
+    ctx.lineTo(60+x,20+y)
+    ctx.lineTo(45+x,47+y)
+    ctx.lineTo(30+x,20+y)
+
   }
 
   </script>
@@ -122,8 +162,8 @@ canvas.addEventListener('mousemove',mouseMove,false)
        <h1>Calculations</h1>
        Put some textfields, labels, and buttons here ..
        <h5>Convert Soles to USD</h5>
-       Enter Soles <input type="number" id="soles"><br>
-       <button class="btn btn-lg btn-danger" onClick="calcConversion()">
+       Soles <input type="number" id="soles"><br>
+       <button class="btn btn-sm btn-danger" onClick="calcConversion()">
            Convert Peruvian Soles to USD
        </button>
        <br>
@@ -132,8 +172,8 @@ canvas.addEventListener('mousemove',mouseMove,false)
        <label id="Conversion">????</label>
 
        <h5>Convert Yuan to USD</h5>
-       Enter Yuan <input type="number" id="yuan"><br>
-       <button class="btn btn-lg btn-danger" onClick="calcConversion2()">
+       Yuan <input type="number" id="yuan"><br>
+       <button class="btn btn-sm btn-danger" onClick="calcConversion2()">
            Convert Chinese Yuan to USD
        </button>
        <br>
@@ -142,8 +182,8 @@ canvas.addEventListener('mousemove',mouseMove,false)
        <label id="Conversion2">????</label>
 
        <h5>Convert Yen to USD</h5>
-       Enter Yen <input type="number" id="yen"><br>
-       <button class="btn btn-lg btn-danger" onClick="calcConversion3()">
+       Yen <input type="number" id="yen"><br>
+       <button class="btn btn-sm btn-danger" onClick="calcConversion3()">
            Convert Japanese Yen to USD
        </button>
        <br>
@@ -156,7 +196,7 @@ canvas.addEventListener('mousemove',mouseMove,false)
      </div>
      <div class="col">
        <h1>Canvas</h1>
-       <canvas style="float:left;margin-right:30px" id="canvas" width="500" height="500"></canvas>
+       <canvas style="float:left;margin-right:30px" id="canvas" width="750" height="750"></canvas>
 
 
      </div>
