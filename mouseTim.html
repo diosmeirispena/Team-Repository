@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <script type="application/javascript">
+
+  let canvas=null  // we give this a value in the init method
+  let ctx=null
+
+  function init(){
+    // initialize canvas and ctx after the page is loaded
+    canvas = document.getElementById('canvas')
+    ctx = canvas.getContext('2d')
+    drawBackground()
+    canvas.addEventListener('click',mouseClick,false)
+    //canvas.addEventListener('mousemove',mouseMove,false)
+  }
+
+  function mouseClick(event){
+    console.dir(event)
+
+  }
+
+  function mouseMove(event){
+    //console.log(event.buttons)
+    ctx.fillStyle="rgba(8,10,75,0.1)"
+    const x = event.offsetX
+    const y = event.offsetY
+    if (event.which==1){  // see if the mouse button is pressed
+
+    }
+  }
+
+
+
+
+  function drawCircle(x,y,r){
+    // draw a circle centered at (x,y) with radius r
+    ctx.beginPath();
+    ctx.arc(x,y,r,0,2*Math.PI,true)
+    ctx.stroke()
+  }
+
+  function fillCircle(x,y,r){
+    // draw a circle centered at (x,y) with radius r
+    ctx.beginPath();
+    ctx.arc(x,y,r,0,2*Math.PI,true)
+    ctx.fill()
+  }
+  function drawStrange(){
+    ctx.strokeStyle="green"
+    ctx.lineWidth=5
+    ctx.beginPath()
+    ctx.moveTo(20,20)
+    ctx.lineTo(30,20)
+    ctx.lineTo(40,60)
+    ctx.lineTo(50,60)
+    ctx.lineTo(60,20)
+    ctx.lineTo(70,20)
+    ctx.lineTo(45,47)
+    ctx.lineTo(20,20)
+    ctx.stroke()
+    ctx.fill()
+
+    ctx.moveTo(20,20)
+    ctx.lineTo(30,20)
+    ctx.lineTo(40,60)
+    ctx.lineTo(50,20)
+    ctx.lineTo(60,20)
+
+  }
+  function drawInitials(){
+    ctx.moveTo(100,100)
+    ctx.lineTo(120,100)
+    ctx.lineTo(150,160)
+    ctx.lineTo(180,100)
+    ctx.lineTo(200,100)
+    ctx.lineTo(155,190)
+    ctx.lineTo(145,190)
+    ctx.lineTo(100,100)
+    ctx.stroke()
+    ctx.fill()
+    drawInitials_2()
+}
+  function drawInitials_2(){
+      console.log("hello")
+        ctx.beginPath()
+        ctx.moveTo(200,100)
+        ctx.lineTo(270,100)
+        ctx.lineTo(250,140)
+        ctx.lineTo(290,190)
+        ctx.lineTo(260,190)
+        ctx.lineTo(230,150)
+        ctx.lineTo(230,190)
+        ctx.lineTo(200,190)
+        ctx.lineTo(200,100)
+        ctx.stroke()
+        ctx.fill()
+  }
+
+
+
+  </script>
+ </head>
+ <body onload="init();">
+   <h1>drawTim interactive javascript canvas for 11/13</h1>
+   <br>
+
+   <button style="background:red; color:white"
+           onclick="drawBackground()">Clear</button>
+
+   <canvas style="float:left;margin-right:30px"
+           id="canvas" width="500" height="500"></canvas>
+   <br>
+
+
+ <button onclick="drawTim()">Draw Tim</button>
+ <button onclick="drawInitials()">Draw Initials</button>
+ <button onclick="drawStrange()">Draw Strange</button>
+
+
+   <script src="drawgrid.js"></script>
+ </body>
+</html>

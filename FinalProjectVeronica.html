@@ -34,13 +34,10 @@
 
 
 
-  let canvas=null  // we give this a value in the init method
-  let ctx=null
-
   function init(){
     // initialize canvas and ctx after the page is loaded
-    canvas = document.getElementById('canvas')
-    ctx = canvas.getContext('2d')
+     canvas = document.getElementById('canvas')
+     ctx = canvas.getContext('2d')
     drawBackground()
     canvas.addEventListener('click',mouseClick,false)
 canvas.addEventListener('mousemove',mouseMove,false)
@@ -48,23 +45,24 @@ canvas.addEventListener('mousemove',mouseMove,false)
 
   function mouseClick(event){
     console.dir(event)
-    ctx.fillStyle="rgba(20,40,55,0.4)"
     const x = event.offsetX
     const y = event.offsetY
-    if (event.which==3)
+    ctx.fillStyle="rgba(59,85,40,.67)";
+    ctx.strokeStyle="rgba(0,0,0,1)"
       drawInitials(x,y)
+      drawInitials_2(x,y)
 
 
-  }
+
+}
 
   function mouseMove(event){
     //console.log(event.buttons)
-    ctx.fillStyle="rgba(8,10,75,0.1)"
     const x = event.offsetX
     const y = event.offsetY
     if (event.which==1){  // see if the mouse button is pressed
       drawStar(x,y)
-      ctx.strokeStyle="rgba(0,0,255,0.3)"
+
     }
 }
 
@@ -72,7 +70,7 @@ canvas.addEventListener('mousemove',mouseMove,false)
     // draw a circle centered at (x,y) with radius r
     ctx.beginPath();
     ctx.arc(x,y,r,0,2*Math.PI,true)
-    ctx.stroke()
+    ctx.stroke();
   }
 
   function drawCircles(){
@@ -95,59 +93,95 @@ canvas.addEventListener('mousemove',mouseMove,false)
     ctx.fillStyle=color
     ctx.beginPath();
     ctx.arc(x,y,r,0,2*Math.PI,true)
-    ctx.fill()
+    ctx.fill();
   }
-  function drawTim(){
-    ctx.strokeStyle="blue"
-    ctx.lineWidth=5
-    ctx.beginPath()
-    ctx.moveTo(198,100)
-    ctx.lineTo(300,10)
-    ctx.lineTo(362,150)
-    ctx.lineTo(364,213)
-    ctx.lineTo(308,263)
-    ctx.lineTo(199,263)
-    ctx.lineTo(136,211)
-    ctx.lineTo(142,141)
-    ctx.lineTo(195,102)
-    ctx.stroke()
+  function drawImage(){
+    ctx.fillStyle="rgba(49,179,198,.75)";
+    ctx.lineWidth=1
+
+ctx.beginPath()
+
+ctx.moveTo(100,100)
+ctx.lineTo(300,0)
+ctx.lineTo(500,100)
+ctx.lineTo(400,100)
+ctx.lineTo(450,140)
+ctx.lineTo(440,210)
+ctx.lineTo(150,210)
+ctx.lineTo(140,140)
+ctx.lineTo(200,100)
+ctx.stroke();
+ctx.fill();
+ctx.closePath();
   }
 
   function drawStar(x,y){
+    ctx.fillStyle="rgba(8,10,75,0.1)";
     ctx.strokeStyle="rgba(0,0,255,0.3)";
-    ctx.lineWidth=3
+    ctx.lineWidth=1
     ctx.beginPath();
-    ctx.moveTo(54+x, 0.0+y);
-    ctx.lineTo(70.5+x, 35+y);
-    ctx.lineTo(109+x, 35+y);
-    ctx.lineTo(81+x, 65.5+y);
-    ctx.lineTo(87.5+x, 102.5+y);
-    ctx.lineTo(54+x, 85+y);
-    ctx.lineTo(20.6+x, 102.5+y);
-    ctx.lineTo(27.5+x, 65.5+y);
-    ctx.lineTo(.5+x, 35+y);
-    ctx.lineTo(37.5+x, 35+y);
-    ctx.lineTo(54+x, 0+y);
+    ctx.moveTo(54+x,0.0+y);
+    ctx.lineTo(70.5+x,35+y);
+    ctx.lineTo(109+x,35+y);
+    ctx.lineTo(81+x,65.5+y);
+    ctx.lineTo(87.5+x,102.5+y);
+    ctx.lineTo(54+x,85+y);
+    ctx.lineTo(20.6+x,102.5+y);
+    ctx.lineTo(27.5+x,65.5+y);
+    ctx.lineTo(.5+x,35+y);
+    ctx.lineTo(37.5+x,35+y);
+    ctx.lineTo(54+x,0+y);
     ctx.stroke();
     ctx.fill();
-    ctx.lineWidth=1
+    ctx.closePath();
+  }
+
+  function drawStrange(){
+    ctx.fillStyle="rgba(349,79,68,.75)";
+    ctx.strokeStyle="turquoise"
+    ctx.lineWidth="1"
+    ctx.beginPath()
+    ctx.moveTo(100,100)
+    ctx.lineTo(200,100)
+    ctx.lineTo(300,500)
+    ctx.lineTo(400,500)
+    ctx.lineTo(500,100)
+    ctx.lineTo(600,100)
+    ctx.lineTo(350,370)
+    ctx.lineTo(100,100)
+    ctx.stroke();
+    ctx.fill();
+    ctx.closePath();
   }
 
   function drawInitials(x,y){
-    ctx.strokeStyle="green"
-    ctx.lineWidth=5
-    ctx.beginPath()
-    ctx.moveTo(50+x,20+y)
-    ctx.lineTo(30+x,20+y)
-    ctx.lineTo(40+x,60+y)
-    ctx.lineTo(50+x,60+y)
-    ctx.lineTo(70+x,20+y)
-    ctx.lineTo(60+x,20+y)
-    ctx.lineTo(45+x,47+y)
-    ctx.lineTo(30+x,20+y)
-
+    ctx.moveTo(100+x,100+y)
+    ctx.lineTo(120+x,100+y)
+    ctx.lineTo(150+x,160+y)
+    ctx.lineTo(180+x,100+y)
+    ctx.lineTo(200+x,100+y)
+    ctx.lineTo(155+x,190+y)
+    ctx.lineTo(145+x,190+y)
+    ctx.lineTo(100+x,100+y)
+    ctx.stroke()
+    ctx.fill()
+    drawInitials_2(x,y);
   }
-
+  function drawInitials_2(x,y){
+      console.log("hello")
+        ctx.beginPath()
+        ctx.moveTo(200+x,100+y)
+        ctx.lineTo(270+x,100+y)
+        ctx.lineTo(250+x,140+y)
+        ctx.lineTo(290+x,190+y)
+        ctx.lineTo(260+x,190+y)
+        ctx.lineTo(230+x,150+y)
+        ctx.lineTo(230+x,190+y)
+        ctx.lineTo(200+x,190+y)
+        ctx.lineTo(200+x,100+y)
+        ctx.stroke()
+        ctx.fill()
+  }
   </script>
  </head>
  <body onload="init();">
@@ -159,12 +193,11 @@ canvas.addEventListener('mousemove',mouseMove,false)
 
    <div class="row">
      <div class="col">
-       <h1>Calculations</h1>
-       Put some textfields, labels, and buttons here ..
+       <h1>Convert Foreign Currencies</h1>
        <h5>Convert Soles to USD</h5>
        Soles <input type="number" id="soles"><br>
        <button class="btn btn-sm btn-danger" onClick="calcConversion()">
-           Convert Peruvian Soles to USD
+           Peruvian Soles to USD
        </button>
        <br>
        <hr>
@@ -174,7 +207,7 @@ canvas.addEventListener('mousemove',mouseMove,false)
        <h5>Convert Yuan to USD</h5>
        Yuan <input type="number" id="yuan"><br>
        <button class="btn btn-sm btn-danger" onClick="calcConversion2()">
-           Convert Chinese Yuan to USD
+           Chinese Yuan to USD
        </button>
        <br>
        <hr>
@@ -184,7 +217,7 @@ canvas.addEventListener('mousemove',mouseMove,false)
        <h5>Convert Yen to USD</h5>
        Yen <input type="number" id="yen"><br>
        <button class="btn btn-sm btn-danger" onClick="calcConversion3()">
-           Convert Japanese Yen to USD
+           Japanese Yen to USD
        </button>
        <br>
        <hr>
@@ -196,7 +229,7 @@ canvas.addEventListener('mousemove',mouseMove,false)
      </div>
      <div class="col">
        <h1>Canvas</h1>
-       <canvas style="float:left;margin-right:30px" id="canvas" width="750" height="750"></canvas>
+       <canvas style="float:left;margin-right:30px" id="canvas" width="600" height="600"></canvas>
 
 
      </div>
@@ -205,9 +238,84 @@ canvas.addEventListener('mousemove',mouseMove,false)
        <button style="background:red; color:white"
                onclick="drawBackground()">Clear</button>
 
-       <br> <button onclick="drawTim()">Draw Tim</button>
-       ....
+       <br> <button onclick="drawImage()">Draw Image</button>
+       <button onclick="drawStrange()">Draw Strange</button>
+
      </div>
+
+     <body class="container">
+           <h1> A Quick Intro to Veronica </h1>
+
+       <div class="row">
+
+         <div class="col">
+           <figure>
+             <img src="Judith.jpeg" alt="A picture of my sister, Judith, after graduation" width="330" >
+             <figcaption> Judith, After Graduation 6/19 </figcaption>
+           </figure>
+
+             <figure>
+               <img src="Guggenheim.jpeg" alt="Portrait, Solomon R. Guggenheim Museum" width="340" >
+               <figcaption> Painting, Solomon R. Guggenheim Museum 7/17 </figcaption>
+             </figure>
+         </div>
+
+
+
+         <div class="col">
+           <h5> Short Biographical Info </h5>
+             I am currently a freshman at Brandeis University, I am 19 years old, and I am thinking about double majoring in Economics and perhaps Business or Computer Science. I like to run and hike. I also love Asian cuisine. I've been spending most of my time studying and hanging out with my friends recently.
+             I live with my father and two younger sisters in Woodhaven, New York.
+
+             <figure style="margin-top:10px">
+               <img src="Concert.jpeg" width="600">
+
+               <figcaption> Steve Lacy Concert, House of Blues 10/19 </figcaption>
+             </figure>
+
+         <div class="row">
+           <div class="col">
+             <h5 style="margin-top:0px"> Random Facts About Me </h5>
+               <ul>
+                 <li> I used to swim competitively </li>
+                 <li> I was in band from 3rd to 9th grade </li>
+                 <li> I broke my right ankle twice </li>
+                 <li> I was a founding member of my high school's Speech and Debate team (link below) </li>
+                 <li> I love watching BuzzFeed Unsolved (link below) </li>
+               </ul>
+             <div class="col">
+               <div class="wrapper">
+                 <a class="btn btn-info btn-xs" href="https://www.afbhsspeechanddebate.com/"> Speech and Debate </a>
+                 <a class="btn btn-info btn-xs" href="https://www.youtube.com/channel/UCKijjvu6bN1c-ZHVwR7-5WA/videos"> BuzzFeed Unsolved </a>
+               </div>
+             </div>
+           </div>
+
+
+             <div class="col">
+               <figure style="margin-left:120px">
+                 <img src="MirrorSelfie.JPG" width="220">
+                 <figcaption> Selfie, Date Unknown </figcaption>
+               </figure>
+
+           </div>
+         </div>
+       </div>
+     </div>
+
+
+     <table class="table table-bordered table-striped" style="margin-top:5px">
+
+      <thead>
+        <tr> <th> English Authors </th>   <th> Spanish Authors </th>
+      </thead>
+
+      <tbody>
+          <tr> <td> F. Scott Fitzgerald </td>    <td> Miguel de Cervantes </td>
+          <tr> <td> Ernest Hemingway </td>    <td> Mario Vargas Llosa </td>
+          <tr> <td> James Joyce </td>  <td> Carlos Fuentes </td>
+          <tr> <td> Mary Shelley </td>   <td> Gabriel Garcia Marquez </td>
+      </tbody>
 
 
 
