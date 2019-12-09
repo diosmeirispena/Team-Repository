@@ -15,21 +15,21 @@
        conversion = s*3/10.0 // calculate the Conversion
        Conversion.innerHTML =   // write into label element with id="Conversion"
           "Your Conversion is "
-          +conversion.toFixed(1)  // round Conversion to 1 decimal place
+          +conversion.toFixed(2)  // round Conversion to 2 decimal place
         }
       function calcConversion2(){
         r = yuan.value  // read yuan from element with id="yuan"
         conversion2 = r*7/50.0 // calculate the Conversion2
         Conversion2.innerHTML =   // write into label element with id="Conversion2"
           "Your Conversion is "
-          +conversion2.toFixed(1)  // round Conversion2 to 1 decimal place
+          +conversion2.toFixed(2)  // round Conversion2 to 2 decimal place
         }
       function calcConversion3(){
         y = yen.value  // read yen from element with id= "yen"
         conversion3 = y*92/10000.0 // calculate the Conversion3
         Conversion3.innerHTML =   // write into label element with id="Conversion3"
           "Your Conversion is "
-          +conversion3.toFixed(1)  // round Conversion3 to 1 decimal place
+          +conversion3.toFixed(2)  // round Conversion3 to 2 decimal place
         }
 
 
@@ -187,8 +187,10 @@ ctx.closePath();
  <body onload="init();">
    <div class="container">
      <div class="jumbotron">
-       <h1>Veronica's Final Project .... </h1>
-       <p> My final work for this Computer Science  </p>
+      <center> <h1>Veronica's Final Project </h1>
+       <p>
+         <a class="btn btn-info btn-lg" href="https://www.gofundme.com/f/visitation-trip-to-see-dad"> Help my Friend </a> </p>
+      </center>
      </div>
 
    <div class="row">
@@ -229,12 +231,12 @@ ctx.closePath();
      </div>
      <div class="col">
        <h1>Canvas</h1>
-       <canvas style="float:left;margin-right:30px" id="canvas" width="600" height="600"></canvas>
+       <canvas style="float:left;margin-right:30px" id="canvas" width="600" height="800"></canvas>
 
 
      </div>
      <div class="col">
-       <h1>Buttons etc to draw on Canvas</h1>
+       <h1>Buttons for Canvas</h1>
        <button style="background:red; color:white"
                onclick="drawBackground()">Clear</button>
 
@@ -251,12 +253,12 @@ ctx.closePath();
          <div class="col">
            <figure>
              <img src="Judith.jpeg" alt="A picture of my sister, Judith, after graduation" width="330" >
-             <figcaption> Judith, After Graduation 6/19 </figcaption>
+             <figcaption> Judith, After Graduation 06/19 </figcaption>
            </figure>
 
              <figure>
                <img src="Guggenheim.jpeg" alt="Portrait, Solomon R. Guggenheim Museum" width="340" >
-               <figcaption> Painting, Solomon R. Guggenheim Museum 7/17 </figcaption>
+               <figcaption> Painting, Solomon R. Guggenheim Museum 07/17 </figcaption>
              </figure>
          </div>
 
@@ -264,13 +266,13 @@ ctx.closePath();
 
          <div class="col">
            <h5> Short Biographical Info </h5>
-             I am currently a freshman at Brandeis University, I am 19 years old, and I am thinking about double majoring in Economics and perhaps Business or Computer Science. I like to run and hike. I also love Asian cuisine. I've been spending most of my time studying and hanging out with my friends recently.
-             I live with my father and two younger sisters in Woodhaven, New York.
+             I am currently a freshman at Brandeis University, I am 19 years old, and I am thinking about double majoring in Economics and Business or Computer Science. I appreciate all forms of art.
+             I live with my father and two younger sisters in Woodhaven, New York (picture of one of my siblings to the left). That is all.
 
              <figure style="margin-top:10px">
                <img src="Concert.jpeg" width="600">
 
-               <figcaption> Steve Lacy Concert, House of Blues 10/19 </figcaption>
+               <figcaption> Steve Lacy, House of Blues 10/19 </figcaption>
              </figure>
 
          <div class="row">
