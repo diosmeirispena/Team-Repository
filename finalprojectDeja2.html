@@ -10,18 +10,16 @@
   <script type="application/javascript">
 
 
-  function calcBMI(){
-    w = weight.value  // read weight from element with id="weight"
-    h = height.value  // read height from element with id="height"
-    bmi = 703*w/(h*h)  // calculate the Body Mass Index
-    BMI.innerHTML =    // write into label element with id "BMI"
-        "You're BMI is "
-        +bmi.toFixed(1)  // round BMI to 1 decimal place
+  function calcMC(){
+    m = money.value  // read money value from element with id="money"
+    e = 0.71  // read euro rate from element with id="euro"
+    mc =(e*m)  // calculate the Body Mass Index
+    MC.innerHTML =    // write into label element with id "MC"
+        "You're MC is "
+        +mc.toFixed(1)  // round MC to 1 decimal place
 
 
   }
-  let canvas=null  // we give this a value in the init method
-  let ctx=null
 
   function init(){
     // initialize canvas and ctx after the page is loaded
@@ -36,16 +34,19 @@ canvas.addEventListener('mousemove',mouseMove,false)
     console.dir(event)
     const x = event.offsetX
     const y = event.offsetY
-    //draw something here ...
-    ctx.fillRect(x,y,20,50)
+    ctx.fillStyle="rgba (231,76,60)";
+    ctx.strokeStyle="rgba (251, 252, 252)"
+    drawDeja(x,y)
   }
 
   function mouseMove(event){
+    //console.log(event.buttons)
+    ctx.fillStyle="rgba(213,121,250,0.5)"
     const x = event.offsetX
     const y = event.offsetY
-    // put your own code in here!
-    if (event.buttons==1){ // only draw if they are pushing the button!
-        ctx.fillRect(x,y,10,20)
+    if (event.buttons==1){ // see if the mouse button is pressed
+      ctx.strokeStyle="rgba(0,0,255)"
+        drawDeja(x,y,50)
     }
 }
 
@@ -53,7 +54,7 @@ canvas.addEventListener('mousemove',mouseMove,false)
     // draw a circle centered at (x,y) with radius r
     ctx.beginPath();
     ctx.arc(x,y,r,0,2*Math.PI,true)
-    ctx.stroke()
+    ctx.stroke();
   }
 
   function drawCircles(){
@@ -78,20 +79,45 @@ canvas.addEventListener('mousemove',mouseMove,false)
     ctx.arc(x,y,r,0,2*Math.PI,true)
     ctx.fill()
   }
-  function drawTim(){
+
+  function drawDeja(x,y){
+    ctx.fillStyle="rbga(175,122,197)"
+    ctx.strokeStyle="rgba(0,0,255,0.5)"
+    ctx.lineWidth=5
+    ctx.beginPath()
+    ctx.moveTo(x+200,y+101)
+    ctx.lineTo(x+199,y+160)
+    ctx.lineTo(x+239,y+160)
+    ctx.lineTo(x+241,y+149)
+    ctx.lineTo(x+240,y+141)
+    ctx.lineTo(x+238,y+130)
+    ctx.lineTo(x+234,y+122)
+    ctx.lineTo(x+231,y+116)
+    ctx.lineTo(x+228,y+111)
+    ctx.lineTo(x+223,y+107)
+    ctx.lineTo(x+219,y+102)
+    ctx.lineTo(x+214,y+99)
+    ctx.lineTo(x+202,y+98)
+    ctx.lineTo(x+214,y+99)
+    ctx.lineTo(x+202,y+98)
+    ctx.lineTo(x+200,y+159)
+    ctx.lineTo(x+176,y+197)
+    ctx.lineTo(x+270,y+197)
+    ctx.lineTo(x+240,y+162)
+    ctx.fill()
+    ctx.stroke()
+    ctx.closePath();
+  }
+  function draw0(){
     ctx.strokeStyle="blue"
     ctx.lineWidth=5
     ctx.beginPath()
-    ctx.moveTo(198,100)
-    ctx.lineTo(300,100)
-    ctx.lineTo(362,150)
-    ctx.lineTo(364,213)
-    ctx.lineTo(308,263)
-    ctx.lineTo(199,263)
-    ctx.lineTo(136,211)
-    ctx.lineTo(142,141)
-    ctx.lineTo(195,102)
+    ctx.lineTo(102,142)
+    ctx.lineTo(100,196)
+    ctx.lineTo(131,173)
+    ctx.lineTo(105,147)
     ctx.stroke()
+    ctx.lineWidth=1
   }
 
   </script>
@@ -99,42 +125,47 @@ canvas.addEventListener('mousemove',mouseMove,false)
  <body onload="init();">
    <div class="container">
      <div class="jumbotron">
-       <h1>Tim's Final Project .... </h1>
+       <body style="background-color:#AFDCEF;">
+       <h1>Deja's Final Project .... </h1>
        <p>This is a minimal demo </p>
      </div>
-     
-   <div class="row">
-     <div class="col">
-       <h1>Calculations</h1>
-       Put some textfields, labels, and buttons here ..
-       <h1>Body Mass Index</h1>
-       What is your full name? <input type="text" id="fullName"><br>
-       Enter your weight in pounds <input type="number" id="weight"><br>
-       Enter your height in inches <input type="number" id="height"><br>
-       <button class="btn btn-lg btn-danger"
-               onClick="calcBMI()">
-           Calculate BMI
-       </button>
-       <br>
-       <hr>
-       <h2>Results</h2>
-       <label id="BMI">????</label>
+
+     <div class="row">
+       <div class="col">
+         <h1>Convert you're money with ease !</h1>
+        input your money value in U.S currency.
+         <h1>Money Conversion </h1>
+         Enter your value in U.S currency <input type="number" id="money"><br>
+         Enter your the euro rate of 0.71 <input type="number" id="euro"><br>
+         <button class="btn btn-lg btn-danger"
+                 onClick="calcMC()"> calculate
+               </button>
+               <br>
+               <hr>
+               <h2>Results</h2>
+               <label id="MC">????</label>
 
      </div>
      <div class="col">
        <h1>Canvas</h1>
-       <canvas style="float:left;margin-right:30px" id="canvas" width="500" height="500"></canvas>
-
-
+       <canvas style="float:left;margin-right:30px" id="canvas" width="600" height="800"></canvas>
      </div>
+
      <div class="col">
-       <h1>Buttons etc to draw on Canvas</h1>
+       <h1>Buttons for Canvas</h1>
        <button style="background:red; color:white"
                onclick="drawBackground()">Clear</button>
 
-       <br> <button onclick="drawTim()">Draw Tim</button>
-       ....
+       <br><button onclick="draw0()">Draw 0</button>
      </div>
+
+     <div class="container">
+       <h1> Meet the Creator! </h1>
+          <div class="row">
+            <div class="col-md">
+              <img width="200"
+                     src="deja.finalimage.jpeg">
+    </div>
 
 
 
