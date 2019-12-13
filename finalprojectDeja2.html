@@ -41,10 +41,12 @@ canvas.addEventListener('mousemove',mouseMove,false)
 
   function mouseMove(event){
     //console.log(event.buttons)
+    ctx.fillStyle="rgba(213,121,250,0.5)"
     const x = event.offsetX
     const y = event.offsetY
     if (event.buttons==1){ // see if the mouse button is pressed
-        drawDeja(x,y)
+      ctx.strokeStyle="rgba(0,0,255)"
+        drawDeja(x,y,50)
     }
 }
 
@@ -77,11 +79,11 @@ canvas.addEventListener('mousemove',mouseMove,false)
     ctx.arc(x,y,r,0,2*Math.PI,true)
     ctx.fill()
   }
-  
+
   function drawDeja(x,y){
     ctx.fillStyle="rbga(175,122,197)"
-    ctx.strokeStyle="rgba(0,0,255,0.3)"
-    ctx.lineWidth=10
+    ctx.strokeStyle="rgba(0,0,255,0.5)"
+    ctx.lineWidth=5
     ctx.beginPath()
     ctx.moveTo(200+x,101+y)
     ctx.lineTo(199+x,160+y)
@@ -147,18 +149,23 @@ canvas.addEventListener('mousemove',mouseMove,false)
      <div class="col">
        <h1>Canvas</h1>
        <canvas style="float:left;margin-right:30px" id="canvas" width="600" height="800"></canvas>
-
-
      </div>
+
      <div class="col">
        <h1>Buttons for Canvas</h1>
        <button style="background:red; color:white"
                onclick="drawBackground()">Clear</button>
 
-       <br> <button onclick="drawDeja()">Draw Deja</button>
-       <button onclick="draw0()">Draw 0</button>
-       ....
+       <br><button onclick="draw0()">Draw 0</button>
      </div>
+
+     <div class="container">
+       <h1> Meet the Creator! </h1>
+          <div class="row">
+            <div class="col-md">
+              <img width="200"
+                     src="deja.finialimage.jpeg">
+    </div>
 
 
 

@@ -34,8 +34,6 @@
     const x = event.offsetX
     const y = event.offsetY
     if (event.buttons==1){  // see if the mouse button is pressed
-      ctx.fillRect(x,y,10,30)
-      ctx.fillRect(x-15,y,30,3)
       ctx.strokeStyle="rgba(0,0,255,0.3)"
       dejadraw(x,y)
       drawCircle(x,y,50)
