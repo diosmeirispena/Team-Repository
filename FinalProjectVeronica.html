@@ -51,10 +51,7 @@ canvas.addEventListener('mousemove',mouseMove,false)
     ctx.strokeStyle="rgba(0,0,0,1)"
       drawInitials(x,y)
       drawInitials_2(x,y)
-
-
-
-}
+  }
 
   function mouseMove(event){
     //console.log(event.buttons)
@@ -95,24 +92,23 @@ canvas.addEventListener('mousemove',mouseMove,false)
     ctx.arc(x,y,r,0,2*Math.PI,true)
     ctx.fill();
   }
+
   function drawImage(){
     ctx.fillStyle="rgba(49,179,198,.75)";
     ctx.lineWidth=1
-
-ctx.beginPath()
-
-ctx.moveTo(100,100)
-ctx.lineTo(300,0)
-ctx.lineTo(500,100)
-ctx.lineTo(400,100)
-ctx.lineTo(450,140)
-ctx.lineTo(440,210)
-ctx.lineTo(150,210)
-ctx.lineTo(140,140)
-ctx.lineTo(200,100)
-ctx.stroke();
-ctx.fill();
-ctx.closePath();
+    ctx.beginPath()
+    ctx.moveTo(100,100)
+    ctx.lineTo(300,0)
+    ctx.lineTo(500,100)
+    ctx.lineTo(400,100)
+    ctx.lineTo(450,140)
+    ctx.lineTo(440,210)
+    ctx.lineTo(150,210)
+    ctx.lineTo(140,140)
+    ctx.lineTo(200,100)
+    ctx.stroke();
+    ctx.fill();
+    ctx.closePath();
   }
 
   function drawStar(x,y){
@@ -120,17 +116,17 @@ ctx.closePath();
     ctx.strokeStyle="rgba(0,0,255,0.3)";
     ctx.lineWidth=1
     ctx.beginPath();
-    ctx.moveTo(54+x,0.0+y);
-    ctx.lineTo(70.5+x,35+y);
-    ctx.lineTo(109+x,35+y);
-    ctx.lineTo(81+x,65.5+y);
-    ctx.lineTo(87.5+x,102.5+y);
-    ctx.lineTo(54+x,85+y);
-    ctx.lineTo(20.6+x,102.5+y);
-    ctx.lineTo(27.5+x,65.5+y);
-    ctx.lineTo(.5+x,35+y);
-    ctx.lineTo(37.5+x,35+y);
-    ctx.lineTo(54+x,0+y);
+    ctx.moveTo(x+54,y+0);
+    ctx.lineTo(x+70.5,y+35);
+    ctx.lineTo(x+109,y+35);
+    ctx.lineTo(x+81,y+65.5);
+    ctx.lineTo(x+87.5,y+102.5);
+    ctx.lineTo(x+54,y+85);
+    ctx.lineTo(x+20.6,y+102.5);
+    ctx.lineTo(x+27.5,y+65.5);
+    ctx.lineTo(x+.5,y+35);
+    ctx.lineTo(x+37.5,y+35);
+    ctx.lineTo(x+54,y+0);
     ctx.stroke();
     ctx.fill();
     ctx.closePath();
@@ -167,20 +163,21 @@ ctx.closePath();
     ctx.fill()
     drawInitials_2(x,y);
   }
+
   function drawInitials_2(x,y){
       console.log("hello")
-        ctx.beginPath()
-        ctx.moveTo(200+x,100+y)
-        ctx.lineTo(270+x,100+y)
-        ctx.lineTo(250+x,140+y)
-        ctx.lineTo(290+x,190+y)
-        ctx.lineTo(260+x,190+y)
-        ctx.lineTo(230+x,150+y)
-        ctx.lineTo(230+x,190+y)
-        ctx.lineTo(200+x,190+y)
-        ctx.lineTo(200+x,100+y)
-        ctx.stroke()
-        ctx.fill()
+      ctx.beginPath()
+      ctx.moveTo(200+x,100+y)
+      ctx.lineTo(270+x,100+y)
+      ctx.lineTo(250+x,140+y)
+      ctx.lineTo(290+x,190+y)
+      ctx.lineTo(260+x,190+y)
+      ctx.lineTo(230+x,150+y)
+      ctx.lineTo(230+x,190+y)
+      ctx.lineTo(200+x,190+y)
+      ctx.lineTo(200+x,100+y)
+      ctx.stroke()
+      ctx.fill()
   }
   </script>
  </head>
