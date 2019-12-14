@@ -49,9 +49,12 @@ canvas.addEventListener('mousemove',mouseMove,false)
     const y = event.offsetY
     ctx.fillStyle="rgba(59,85,40,.67)";
     ctx.strokeStyle="rgba(0,0,0,1)"
-      drawInitials(x,y)
-      drawInitials_2(x,y)
+      if (event.altKey){
+        drawCircle(x,y,10)
+        } else {
+          drawInitials(x,y)
   }
+}
 
   function mouseMove(event){
     //console.log(event.buttons)
@@ -65,32 +68,11 @@ canvas.addEventListener('mousemove',mouseMove,false)
 
   function drawCircle(x,y,r){
     // draw a circle centered at (x,y) with radius r
-    ctx.beginPath();
-    ctx.arc(x,y,r,0,2*Math.PI,true)
-    ctx.stroke();
-  }
-
-  function drawCircles(){
-    let x = parseInt(xTF.value)
-    let y = parseInt(yTF.value)
-    let r = parseInt(rTF.value)
-    let n = parseInt(nTF.value)
-    let color = colorTF.value
-    for (let a = 0; a<n; a++){
-      drawCircle(x+10*a, y-10*a, 10+r*a)
-    }
-  }
-
-
-  function drawOneCircle(){
-    let x = parseInt(xTF.value)
-    let y = parseInt(yTF.value)
-    let r = parseInt(rTF.value)
-    let color = colorTF.value
-    ctx.fillStyle=color
+    ctx.fillStyle="rgba(220,12,32,.2)"
     ctx.beginPath();
     ctx.arc(x,y,r,0,2*Math.PI,true)
     ctx.fill();
+
   }
 
   function drawImage(){
@@ -151,34 +133,36 @@ canvas.addEventListener('mousemove',mouseMove,false)
   }
 
   function drawInitials(x,y){
-    ctx.moveTo(100+x,100+y)
-    ctx.lineTo(120+x,100+y)
-    ctx.lineTo(150+x,160+y)
-    ctx.lineTo(180+x,100+y)
-    ctx.lineTo(200+x,100+y)
-    ctx.lineTo(155+x,190+y)
-    ctx.lineTo(145+x,190+y)
-    ctx.lineTo(100+x,100+y)
+    ctx.moveTo(x,y)
+    ctx.lineTo(x+20,y)
+    ctx.lineTo(x+50,y+60)
+    ctx.lineTo(x+80,y)
+    ctx.lineTo(x+100,y)
+    ctx.lineTo(x+55,y+90)
+    ctx.lineTo(x+45,y+90)
+    ctx.lineTo(x,y)
     ctx.stroke()
     ctx.fill()
-    drawInitials_2(x,y);
+    drawInitials_2(x,y)
+
   }
 
   function drawInitials_2(x,y){
       console.log("hello")
       ctx.beginPath()
-      ctx.moveTo(200+x,100+y)
-      ctx.lineTo(270+x,100+y)
-      ctx.lineTo(250+x,140+y)
-      ctx.lineTo(290+x,190+y)
-      ctx.lineTo(260+x,190+y)
-      ctx.lineTo(230+x,150+y)
-      ctx.lineTo(230+x,190+y)
-      ctx.lineTo(200+x,190+y)
-      ctx.lineTo(200+x,100+y)
+      ctx.moveTo(x+170,y)
+      ctx.lineTo(x+150,y+40)
+      ctx.lineTo(x+190,y+90)
+      ctx.lineTo(x+160,y+90)
+      ctx.lineTo(x+130,y+50)
+      ctx.lineTo(x+130,y+90)
+      ctx.lineTo(x+100,y+90)
+      ctx.lineTo(x+100,y)
+      ctx.lineTo(x+170,y)
       ctx.stroke()
       ctx.fill()
-  }
+    }
+
   </script>
  </head>
  <body onload="init();">
@@ -237,8 +221,10 @@ canvas.addEventListener('mousemove',mouseMove,false)
        <button style="background:red; color:white"
                onclick="drawBackground()">Clear</button>
 
-       <br> <button onclick="drawImage()">Draw Image</button>
+       <br>
+       <button onclick="drawImage()">Draw Image</button>
        <button onclick="drawStrange()">Draw Strange</button>
+       <br>
 
      </div>
 
